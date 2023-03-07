@@ -1,5 +1,6 @@
 # AudioGagger
 Get gagged... voluntarily
+
 ![Project logo](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037.PNG](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037_500x500.png)
 
 ## Explain the code
