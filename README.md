@@ -3,7 +3,7 @@ Get gagged... voluntarily
 
 
 ## Google Speech-to-text
-This speech to text model uses Googles speech to text api which means... you guessed it!\n you will need a google cloud bucket for it to work.
+This speech to text model uses Googles speech to text api which means... you guessed it! you will need a google cloud bucket for it to work.
 until I can find a way to spin up a cloud instance or get whisper working to work on your local machine, this is what it is. 
 
 ## But does it even work?
@@ -13,5 +13,7 @@ YES! check out the example audio and the result audio to see whats up. currently
 you bet your a$$ there will!
 
 
-[example audio with cuss words](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/example.mp3)
+[example audio](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/example.mp3)
+
+
 [Result audio](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/result.mp3)
