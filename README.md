@@ -11,3 +11,6 @@ YES! check out the example audio and the result audio to see whats up. currently
 
 ## Will there be updates to the code? 
 you bet your a$$ there will!
+
+
+[example audio with cuss words](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/example.mp3)
