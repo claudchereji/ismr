@@ -1,6 +1,6 @@
 # AudioGagger
 Get gagged... voluntarily
-![Project logo]([https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037.PNG](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037_500x500.png)
+![Project logo](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037.PNG](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037_500x500.png)
 
 ## Explain the code
 This is a script that performs audio transcription using Google Cloud Speech-to-Text API and identifies cuss words in the transcription. It then creates a JSON file with the transcription and time codes for cuss words, and replaces the segments containing cuss words in the audio file with new audio.
