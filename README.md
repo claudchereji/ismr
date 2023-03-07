@@ -14,3 +14,4 @@ you bet your a$$ there will!
 
 
 [example audio with cuss words](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/example.mp3)
+[Result audio](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/result.mp3)
