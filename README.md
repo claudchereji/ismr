@@ -1,31 +1,45 @@
-# AudioGagger
-Get gagged... voluntarily
+# Audio Transcription and Explicit Language Detection using Google Cloud Speech-to-Text API
 
-![Project logo](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037.PNG](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/IMG_0037_500x500.png)
+## Overview
 
-## Explain the code
-This is a script that performs audio transcription using Google Cloud Speech-to-Text API and identifies cuss words in the transcription. It then creates a JSON file with the transcription and time codes for cuss words, and replaces the segments containing cuss words in the audio file with new audio.
+This script leverages the Google Cloud Speech-to-Text API to perform audio transcription while also identifying and timestamping instances of explicit language within the transcription. The result is stored in a JSON file that contains the transcription with corresponding time codes for explicit language. Additionally, the script replaces segments of the audio file containing explicit language with a cleaner version of the audio.
 
-The code imports the required libraries, such as json, pydub, and google.cloud.speech_v1p1beta1. It then loads an audio file in MP3 format, checks the number of channels, converts the audio to stereo if it is a mono file, exports the audio file as FLAC, sets the frame rate to 16000 Hz, and exports it again as FLAC. The FLAC file is then uploaded to a Google Cloud Storage bucket.
+## How it Works
 
-The Google Cloud Speech-to-Text API is used to transcribe the audio file. The API is set up to recognize FLAC encoding, a sample rate of 16000 Hz, two audio channels, and American English language. The API is also set up to enable word time offsets. The response from the API is then parsed to create a list of dictionaries with information about each word in the transcription.
+### Dependencies
 
-Next, the script filters the word info list to only include cusswords, and creates a new list with the time codes for each cussword. The script then loads the original audio file, replaces the segments with cusswords with a new audio file, and exports the new audio file. The time codes are used to identify the segments that contain cusswords.
+This script requires several Python libraries, including `json`, `pydub`, and `google.cloud.speech_v1p1beta1`.
 
+### Audio Processing
 
+1. The script begins by loading an audio file in MP3 format.
+2. It checks the number of audio channels and converts mono audio to stereo if necessary.
+3. The audio is exported as FLAC format with a 16000 Hz frame rate.
+4. The FLAC file is then uploaded to a Google Cloud Storage bucket.
 
-## Google Speech-to-text
-This speech to text model uses Googles speech to text api which means... you guessed it! you will need a google cloud bucket for it to work.
-until I can find a way to spin up a cloud instance or get whisper working to work on your local machine, this is what it is. 
+### Transcription
 
-## But does it even work?
-YES! check out the example audio and the result audio to see whats up. currently, I'm suffering from a syncing issue where the overlayed sound effect doesn't line up with every cussword and i feel like thats a google problem. i feel like the time accuracy is not as great as I hoped. it could also be a problem with my code which is the best possibility.
+1. The Google Cloud Speech-to-Text API is configured to recognize FLAC encoding, a 16000 Hz sample rate, two audio channels, and American English language. Word time offsets are enabled.
+2. The API transcribes the audio file, providing a response that is parsed into a list of dictionaries containing information about each word in the transcription.
 
-## Will there be updates to the code? 
-you bet your a$$ there will!
+### Explicit Language Detection
 
+1. The script filters the word info list to include only instances of explicit language.
+2. A new list is created with time codes for each instance of explicit language.
 
-[example audio](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/example.mp3)
+### Audio Replacement
 
+1. The original audio file is loaded.
+2. Segments of the audio containing explicit language are replaced with cleaner audio.
+3. The new audio is exported, with time codes used to identify segments with explicit language.
 
-[Result audio](https://raw.githubusercontent.com/claudchereji/AudioGagger/main/result.mp3)
+## Google Speech-to-Text API
+
+This script utilizes Google's Speech-to-Text API, which requires access to a Google Cloud Storage bucket for operation.
+
+## Known Issues
+
+- There is a syncing issue where the overlayed sound effect may not line up perfectly with every instance of explicit language. This may be attributed to a limitation in the Google Cloud API's time accuracy.
+- While the script is functional, further updates and improvements are planned to enhance its performance.
+
+Thank you for using this audio transcription and explicit language detection tool. We welcome any contributions and feedback to help make this script even better.
