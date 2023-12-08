@@ -1,45 +1,43 @@
-# Audio Transcription and Explicit Language Detection using Google Cloud Speech-to-Text API
+# Audio Gagger
 
-## Overview
+Audio Gagger is a Python script that takes an input audio file, identifies and extracts segments containing offensive language, and replaces those segments with a censor beep sound. This tool utilizes the [WhisperX](https://github.com/example/whisperx) library for audio transcription and manipulation, as well as the [PyDub](https://github.com/jiaaro/pydub) library for audio processing.
 
-This script leverages the Google Cloud Speech-to-Text API to perform audio transcription while also identifying and timestamping instances of explicit language within the transcription. The result is stored in a JSON file that contains the transcription with corresponding time codes for explicit language. Additionally, the script replaces segments of the audio file containing explicit language with a cleaner version of the audio.
+## Prerequisites
 
-## How it Works
+Before using Audio Gagger, ensure you have the following dependencies installed:
 
-### Dependencies
+- [WhisperX](https://github.com/example/whisperx) library
+- [PyDub](https://github.com/jiaaro/pydub) library
 
-This script requires several Python libraries, including `json`, `pydub`, and `google.cloud.speech_v1p1beta1`.
+You can install the required libraries using the following commands:
 
-### Audio Processing
+```bash
+pip install whisperx pydub
+```
 
-1. The script begins by loading an audio file in MP3 format.
-2. It checks the number of audio channels and converts mono audio to stereo if necessary.
-3. The audio is exported as FLAC format with a 16000 Hz frame rate.
-4. The FLAC file is then uploaded to a Google Cloud Storage bucket.
+## Usage
 
-### Transcription
+1. Replace the placeholder audio file (`input.mp3`) with the path to your desired audio file.
+2. Set the output directory by modifying the `output_directory` variable.
+3. Replace the `censor.mp3` file with your preferred censor beep sound.
 
-1. The Google Cloud Speech-to-Text API is configured to recognize FLAC encoding, a 16000 Hz sample rate, two audio channels, and American English language. Word time offsets are enabled.
-2. The API transcribes the audio file, providing a response that is parsed into a list of dictionaries containing information about each word in the transcription.
+```python
+# Replace "input.mp3" with the actual path to your audio file
+input_audio_file = "path/to/your/audio/file.mp3"
 
-### Explicit Language Detection
+# Replace "output_directory" with the desired directory for the output JSON file
+output_directory = "/path/to/output/directory"
 
-1. The script filters the word info list to include only instances of explicit language.
-2. A new list is created with time codes for each instance of explicit language.
+# Replace "censor.mp3" with your censor beep sound file
+insert_audio = AudioSegment.from_file("path/to/censor/beep.mp3")
+```
 
-### Audio Replacement
+4. Run the script:
 
-1. The original audio file is loaded.
-2. Segments of the audio containing explicit language are replaced with cleaner audio.
-3. The new audio is exported, with time codes used to identify segments with explicit language.
+```bash
+python audio_gagger.py
+```
 
-## Google Speech-to-Text API
+The script will transcribe the audio using WhisperX, identify offensive language segments, and replace them with the censor beep sound. The output audio will be saved as `output_audio.mp3` in the specified output directory.
 
-This script utilizes Google's Speech-to-Text API, which requires access to a Google Cloud Storage bucket for operation.
-
-## Known Issues
-
-- There is a syncing issue where the overlayed sound effect may not line up perfectly with every instance of explicit language. This may be attributed to a limitation in the Google Cloud API's time accuracy.
-- While the script is functional, further updates and improvements are planned to enhance its performance.
-
-Thank you for using this audio transcription and explicit language detection tool. We welcome any contributions and feedback to help make this script even better.
+**Note:** Make sure to adjust the list of cusswords in the code to match your specific use case.
