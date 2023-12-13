@@ -31,11 +31,11 @@ def is_cussword(word):
     # Check if the word is in the list of cusswords
     return word in cusswords
 
-# Replace "examples/sample01.wav" with the actual path to your WAV file
+# Replace "examples/sample01.mp3" with the actual path to your mp3 file
 input_audio_file = "input.mp3"
 
 # Replace "output_directory" with the desired directory for the output JSON file
-output_directory = "/home/claud/Desktop/audio gagger"
+output_directory = "/home/Desktop/ismr"
 
 # Check if the JSON file already exists
 json_file_path = os.path.join(output_directory, f"{os.path.splitext(input_audio_file)[0]}.json")
