@@ -22,7 +22,7 @@ as well as others but I'll work on getting those here later on.
 You can install the required libraries using the following commands:
 
 ```bash
-pip install whisperx pydub
+pip install pydub tk
 ```
 
 Whisperx seems to not want to download with pip so you can clone the repo and get it that way
