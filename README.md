@@ -1,6 +1,11 @@
+![ISMR Logo](https://github.com/claudchereji/ismr/blob/main/IMG_0037_500x500.png?raw=true)
+
+
+
 # ISMR
 ISMR stands for "I'm Sorry Michael Reeves." The reason for this name is that Michael Reeves inspired me to make this tool because he said in a video once
 that he doesn't want to be censored and in the spirit of Michael Reeves I decided to censor him with code. That is why this tool exists. 
+
 
 
 ISMR is a Python script that takes an input audio file, identifies and extracts segments containing offensive language, and replaces those segments with a censor sound. This tool utilizes the [WhisperX](https://github.com/example/whisperx) library for audio transcription and manipulation, as well as the [PyDub](https://github.com/jiaaro/pydub) library for audio processing.
