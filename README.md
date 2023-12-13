@@ -1,19 +1,26 @@
-# Audio Gagger
+# ISMR
+ISMR stands for "I'm Sorry Michael Reeves." The reason for this name is that Michael Reeves inspired me to make this tool because he said in a video once
+that he doesn't want to be censored and in the spirit of Michael Reeves I decided to censor him with code. That is why this tool exists. 
 
-Audio Gagger is a Python script that takes an input audio file, identifies and extracts segments containing offensive language, and replaces those segments with a censor beep sound. This tool utilizes the [WhisperX](https://github.com/example/whisperx) library for audio transcription and manipulation, as well as the [PyDub](https://github.com/jiaaro/pydub) library for audio processing.
+
+ISMR is a Python script that takes an input audio file, identifies and extracts segments containing offensive language, and replaces those segments with a censor sound. This tool utilizes the [WhisperX](https://github.com/example/whisperx) library for audio transcription and manipulation, as well as the [PyDub](https://github.com/jiaaro/pydub) library for audio processing.
 
 ## Prerequisites
 
-Before using Audio Gagger, ensure you have the following dependencies installed:
+Before using ISMR, ensure you have the following dependencies installed:
 
 - [WhisperX](https://github.com/example/whisperx) library
 - [PyDub](https://github.com/jiaaro/pydub) library
+
+as well as others but I'll work on getting those here later on.
 
 You can install the required libraries using the following commands:
 
 ```bash
 pip install whisperx pydub
 ```
+
+Whisperx seems to not want to download with pip so you can clone the repo and get it that way
 
 ## Usage
 
@@ -35,7 +42,7 @@ insert_audio = AudioSegment.from_file("path/to/censor/beep.mp3")
 4. Run the script:
 
 ```bash
-python audio_gagger.py
+python3 audio_gagger.py
 ```
 
 The script will transcribe the audio using WhisperX, identify offensive language segments, and replace them with the censor beep sound. The output audio will be saved as `output_audio.mp3` in the specified output directory.
