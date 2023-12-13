@@ -2,24 +2,32 @@ import subprocess
 import os
 import json
 from pydub import AudioSegment
+import time
+
+# Record the start time
+start_time = time.time()
 
 def is_cussword(word):
     # List of cusswords
-    cusswords = ['arse', 'arsehead', 'arsehole', 'ass', 'asshole', 'bastard', 'bitch', 
-                 'bloody', 'bollocks', 'brotherfucker', 'bugger', 'bullshit', 'child-fucker', 
-                 'Christ on a bike', 'Christ on a cracker', 'cock', 'cocksucker', 'crap', 'cunt', 
+    cusswords = ['arse', 'arsehead', 'arsehole', 'ass', 'asshole', 'bastard', 'bastards', 'bitch', 'bitch.', 'bitch,', 
+                 'bloody', 'bollocks', 'brotherfucker', 'Fuck', 'bugger', 'bullshit', 
+                 "shit's", "Shit's", 'shit,', 'shit.', 'Shit,', 'Shit.' 'child-fucker', 
+                 'Christ on a bike', 'dipshit', 'Dipshit', 'shitter', 'shitter,', 'shitter.', 'dipshit.', 
+                 'Dipshit.', 'dipshit,', 'Dipshit,', 'cock', 'cocksucker', 'crap', 'cunt', 
                  'damn', 'damn it', 'dick', 'dickhead', 'dyke', 'fatherfucker', 'frigger', 'fuck', 
-                 'fucker', 'goddamn', 'godsdamn', 'hell', 'holy-shit', "holy hell", 'horseshit', 
+                 'fucker', 'goddamn', 'godsdamn', 'hell', 'holy-shit', "holy-hell", 'horseshit', 
                  'shit', 'Jesus Christ', 'Jesus H. Christ', 'Jesus Harold  Christ', 
                  'Jesus Mary and Joseph', 'kike', 'motherfucker', 'Nigga', 'nigga', "nigga's", 'niggas','nigra', 'piss', 
-                 'prick', 'pussy', 'Shitty', 'shitty', 'shity', 'ass', 'shite', 'sisterfucker', 'slut', 
-                 'son of a bitch', 'son of a whore', 'sweet Jesus', 'twat', 'wanker', 
-                 "bullshit", "fucking", "fuckin", "asshole", "bullshit", "whore", "Fuck You", "Shit", "Piss off", 
-                 "Dick head", "Asshole", "Son of a bitch", "Bastard", "Bitch", "Damn", "Dumb",	
+                 'prick', 'pussy', 'Shitty', 'shitty', 'shity', 'ass', 'shite', 'sisterfucker', 'slut', "shit.",
+                 'son of a bitch', "shitty,", 'son of a whore', 'sweet Jesus', 'twat', 'wanker', 
+                 "bullshit", "fucking", "Fucking","fucking,", "fuckin", "fuckin,", "asshole", "shit?","asshole,", 
+                 "asshole.", "bullshit", "bullshit,", "bullshit.", "whore", "whore,", 
+                 "Fuck", "whore.", "Fuck You", "Fuck You.", "Fuck You,", "Shit", "Piss off", 
+                 "Dick head", "Asshole", "Son of a bitch", "Bastard", 'Bastards', "Bitch", 'big-ass', 'big-ass,', 
+                 'big-ass.', 'Big-ass', 'Big-ass,', 'Big-ass.', "Damn", "Dumb",	
                  "Bimbo", "Piss",	"Jerk",	"Stupid", "Wimp", "Lame", "Idiot", "Fool", "Retard",	
                  "Loser",	"Pain in the Neck", "Rubbish",	"Shag",	"Wanker", "Taking a Piss", "Twat", 
-                 "Bollocks",	"Bugger",	"Choad",	"Crikey",	"Bloody Hell", "Bloody Oaf", 
-                 "Root", "Get Stuffed", "Bugger Me", "Crazy", "Creepy", "Clown", "Weird"]
+                 ]
     # Check if the word is in the list of cusswords
     return word in cusswords
 
@@ -63,6 +71,8 @@ audio = AudioSegment.from_file(input_audio_file)
 # Initialize the total duration change
 total_duration_change = 0
 
+print("Censoring cusswords...")
+
 # Replace cusswords with an insert audio segment
 for segment in data["segments"]:
     segment_start = segment["start"]
@@ -79,6 +89,7 @@ for segment in data["segments"]:
         if is_cussword(word):
             # Append the time codes as a tuple
             cussword_time_codes.append((word_start, word_end))
+            # print(f"I found a cussword between {word_start} and {word_end} seconds")
 
             # Load the insert audio segment
             insert_audio = AudioSegment.from_file("censor.mp3")
@@ -92,11 +103,39 @@ for segment in data["segments"]:
             cussword = audio[word_start_ms:word_end_ms]
             after_cussword = audio[word_end_ms:]
 
-            # Replace the cussword segment with the insert audio
-            audio = before_cussword + insert_audio + after_cussword
-
             # Update the total duration change
-            total_duration_change += len(insert_audio) / 1000 - (word_end - word_start)
+            def split_insert_audio(total_duration_change, insert_audio, split_time, cussword_duration_ms):
+                # Convert the split time and cussword duration to milliseconds
+                split_time_ms = int(split_time * 1000)
+                cussword_duration_ms = int(word_end_ms - word_start_ms)
+
+                # Trim the insert audio to match the cussword duration
+                insert_audio = insert_audio[:cussword_duration_ms]
+
+                # Update the total duration change
+                total_duration_change += (cussword_duration_ms - len(insert_audio)) / 1000
+
+                return total_duration_change, insert_audio
+
+            # Define the missing variables
+            split_time = 0.5  # Replace with the desired split time
+            cussword_duration_ms = int(word_end_ms - word_start_ms)
+
+            # Replace the cussword segment with the insert audio
+            total_duration_change, insert_audio = split_insert_audio(total_duration_change, insert_audio, split_time, cussword_duration_ms)
+            audio = before_cussword + insert_audio + after_cussword
 
 # Export the new audio file
 audio.export("output_audio.mp3", format="mp3")
+print("Done!")
+
+# Record the end time
+end_time = time.time()
+
+# Calculate the elapsed time
+elapsed_time = end_time - start_time
+
+elapsed_time = elapsed_time / 60
+
+# Print the result
+print(f"Script took {elapsed_time} minutes to run.")
