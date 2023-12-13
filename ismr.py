@@ -3,6 +3,9 @@ import os
 import json
 from pydub import AudioSegment
 import time
+import tkinter as tk
+from tkinter import filedialog
+import os
 
 # Record the start time
 start_time = time.time()
@@ -31,11 +34,21 @@ def is_cussword(word):
     # Check if the word is in the list of cusswords
     return word in cusswords
 
-# Replace "examples/sample01.mp3" with the actual path to your mp3 file
-input_audio_file = "input.mp3"
+# Create a Tkinter root window
+root = tk.Tk()
+root.withdraw()
+
+# Prompt the user to select an audio file
+input_audio_file = filedialog.askopenfilename(title="Select Audio File", filetypes=(("Audio Files", "*.mp3"), ("All Files", "*.*")))
+
+# Check if the user selected a file
+if input_audio_file:
+    print(f"\n\nSelected audio file: {input_audio_file}\n\n")
+else:
+    print("No audio file selected.")
 
 # Replace "output_directory" with the desired directory for the output JSON file
-output_directory = "/home/Desktop/ismr"
+output_directory = "/home/claud/Desktop/audio gagger"
 
 # Check if the JSON file already exists
 json_file_path = os.path.join(output_directory, f"{os.path.splitext(input_audio_file)[0]}.json")
@@ -49,7 +62,7 @@ if not os.path.exists(json_file_path):
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
 else:
-    print("JSON file already exists. Skipping subprocess.")
+    print("JSON file already exists. Skipping subprocess.\n\n")
 
 # Load the JSON file
 with open("input.json", "r") as json_file:
@@ -71,7 +84,7 @@ audio = AudioSegment.from_file(input_audio_file)
 # Initialize the total duration change
 total_duration_change = 0
 
-print("Censoring cusswords...")
+print("Censoring cusswords...\n\n")
 
 # Replace cusswords with an insert audio segment
 for segment in data["segments"]:
@@ -125,9 +138,16 @@ for segment in data["segments"]:
             total_duration_change, insert_audio = split_insert_audio(total_duration_change, insert_audio, split_time, cussword_duration_ms)
             audio = before_cussword + insert_audio + after_cussword
 
-# Export the new audio file
-audio.export("output_audio.mp3", format="mp3")
-print("Done!")
+# Get the name of the input audio file
+input_audio_filename = os.path.basename(input_audio_file)
+
+# Remove the file extension
+input_audio_filename = os.path.splitext(input_audio_filename)[0]
+
+# Export the new audio file with the same name as the input audio file
+output_audio_filename = f"{input_audio_filename}_censored.mp3"
+audio.export(output_audio_filename, format="mp3")
+print("Done!\n\n")
 
 # Record the end time
 end_time = time.time()
