@@ -15,7 +15,8 @@ def is_cussword(word):
     cusswords = ['arse', 'arsehead', 'arsehole', 'ass', 'asshole', 'bastard', 'bastards', 'bitch', 'bitch.', 'bitch,', 
                  'bloody', 'bollocks', 'brotherfucker', 'Fuck', 'bugger', 'bullshit', 
                  "shit's", "Shit's", 'shit,', 'shit.', 'Shit,', 'Shit.' 'child-fucker', 
-                 'Christ on a bike', 'dipshit', 'Dipshit', 'shitter', 'shitter,', 'shitter.', 'dipshit.', 
+                 'Christ on a bike', 'dipshit', 'Dipshit', 'shitter', 'Jackass', 'jackass', 
+                'shitter,', 'shitter.', 'dipshit.', 'Jack-ass', 'jack-ass',
                  'Dipshit.', 'dipshit,', 'Dipshit,', 'cock', 'cocksucker', 'crap', 'cunt', 
                  'damn', 'damn it', 'dick', 'dickhead', 'dyke', 'fatherfucker', 'frigger', 'fuck', 
                  'fucker', 'goddamn', 'godsdamn', 'hell', 'holy-shit', "holy-hell", 'horseshit', 
@@ -65,7 +66,8 @@ else:
     print("JSON file already exists. Skipping subprocess.\n\n")
 
 # Load the JSON file
-with open("input.json", "r") as json_file:
+json_file_path = os.path.join(output_directory, f"{os.path.splitext(input_audio_file)[0]}.json")
+with open(json_file_path, "r") as json_file:
     data = json.load(json_file)
 
 # Extract the cussword segments and corresponding time codes
@@ -75,7 +77,8 @@ cussword_segments = data["segments"]
 cussword_time_codes = []
 
 # Load the JSON data
-with open('input.json') as f:
+json_file_path = os.path.join(output_directory, f"{os.path.splitext(input_audio_file)[0]}.json")
+with open(json_file_path, "r") as f:
     data = json.load(f)
 
 # Load the audio file
