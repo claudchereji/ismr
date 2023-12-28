@@ -14,7 +14,9 @@ ISMR is a Python script that takes an input audio file, identifies and extracts 
 
 Before using ISMR, ensure you have the following dependencies installed:
 
-- [WhisperX](https://github.com/example/whisperx) library
+- WhisperX library
+  ```pip install git+https://github.com/m-bain/whisperx.git```
+  Keep the whisperx directory "in" the same directory as the ISMR tool.
 - [PyDub](https://github.com/jiaaro/pydub) library
 
 as well as others but I'll work on getting those here later on.
