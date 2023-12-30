@@ -1,4 +1,4 @@
-![ISMR Logo][(https://github.com/claudchereji/ismr/blob/main/IMG_0037_500x500.png?raw=true)]
+![ISMR Logo](https://raw.githubusercontent.com/claudchereji/ismr/main/ISMR_500x500.png)]
 
 
 
