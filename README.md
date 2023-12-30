@@ -1,5 +1,4 @@
-![ISMR Logo](https://raw.githubusercontent.com/claudchereji/ismr/main/ISMR_500x500.png)]
-
+![ISMR Logo](https://raw.githubusercontent.com/claudchereji/ismr/main/ISMR_500x500.png)
 
 
 # ISMR
