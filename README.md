@@ -35,13 +35,13 @@ Whisperx seems to not want to download with pip so you can clone the repo and ge
 3. Replace the `censor.mp3` file with your preferred censor beep sound.
 
 ```python
-# Replace "input.mp3" with the actual path to your audio file
+# Replace "file.mp3" with the actual path to your audio file
 input_audio_file = "path/to/your/audio/file.mp3"
 
 # Replace "output_directory" with the desired directory for the output JSON file
 output_directory = "/path/to/output/directory"
 
-# Replace "censor.mp3" with your censor beep sound file
+# Replace "beep.mp3" with your censor beep sound file
 insert_audio = AudioSegment.from_file("path/to/censor/beep.mp3")
 ```
 
