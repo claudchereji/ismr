@@ -48,7 +48,7 @@ insert_audio = AudioSegment.from_file("path/to/censor/beep.mp3")
 4. Run the script:
 
 ```bash
-python3 audio_gagger.py
+python3 ismr.py
 ```
 
 The script will transcribe the audio using WhisperX, identify offensive language segments, and replace them with the censor beep sound. The output audio will be saved as `output_audio.mp3` in the specified output directory.
