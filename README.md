@@ -53,4 +53,4 @@ python3 ismr.py
 
 The script will transcribe the audio using WhisperX, identify offensive language segments, and replace them with the censor beep sound. The output audio will be saved as `output_audio.mp3` in the specified output directory.
 
-**Note:** Make sure to adjust the list of cusswords in the code to match your specific use case.
+**Note:** Make sure to adjust the list of keywords in the code to match your specific use case.
