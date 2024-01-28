@@ -10,7 +10,8 @@ from tkinter import filedialog
 import os
 from moviepy.editor import VideoFileClip, AudioFileClip
 from tkinter import ttk
-
+import imageio
+imageio.plugins.ffmpeg.download()
 
 # Record the start time
 start_time = time.time()
