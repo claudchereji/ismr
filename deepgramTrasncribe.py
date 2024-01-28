@@ -1,6 +1,6 @@
 from deepgram import DeepgramClient, PrerecordedOptions 
  
-DEEPGRAM_API_KEY = '37f0a705356f79682f2c0e6248c9eda75073a457' 
+DEEPGRAM_API_KEY = 'your api key here' 
  
 AUDIO_URL = { 
   'url': 'https://static.deepgram.com/examples/Bueller-Life-moves-pretty-fast.wav' 
