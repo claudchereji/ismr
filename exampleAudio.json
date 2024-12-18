@@ -1,0 +1,431 @@
+{
+  "metadata": {
+    "transaction_key": "deprecated",
+    "request_id": "7b662a4b-4c59-412d-85f3-3a88bd743c0d",
+    "sha256": "d00afc42917bd1be4c3dc6b254cafa6a0ea1d492f579c48c0a583121a8f3bf43",
+    "created": "2024-12-18T15:41:12.440Z",
+    "duration": 10.5935,
+    "channels": 1,
+    "models": [
+      "30089e05-99d1-4376-b32e-c263170674af"
+    ],
+    "model_info": {
+      "30089e05-99d1-4376-b32e-c263170674af": {
+        "name": "2-general-nova",
+        "version": "2024-01-09.29447",
+        "arch": "nova-2"
+      }
+    }
+  },
+  "results": {
+    "channels": [
+      {
+        "alternatives": [
+          {
+            "transcript": "Do you like? Are you cat person, dog person? I don't fucking know. I don't wanna get to know you, but there is one thing everyone understands and that's pain. You're supposed to ask why we need this. Why do we need a mic? You already fucking ruined it.",
+            "confidence": 0.9908811,
+            "words": [
+              {
+                "word": "do",
+                "start": 0.0,
+                "end": 0.16,
+                "confidence": 0.892791,
+                "punctuated_word": "Do"
+              },
+              {
+                "word": "you",
+                "start": 0.16,
+                "end": 0.24,
+                "confidence": 0.99972004,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "like",
+                "start": 0.24,
+                "end": 0.39999998,
+                "confidence": 0.98217833,
+                "punctuated_word": "like?"
+              },
+              {
+                "word": "are",
+                "start": 0.39999998,
+                "end": 0.48,
+                "confidence": 0.9974191,
+                "punctuated_word": "Are"
+              },
+              {
+                "word": "you",
+                "start": 0.48,
+                "end": 0.56,
+                "confidence": 0.99334794,
+                "punctuated_word": "you"
+              },
+              {
+                "word": "cat",
+                "start": 0.56,
+                "end": 0.79999995,
+                "confidence": 0.607981,
+                "punctuated_word": "cat"
+              },
+              {
+                "word": "person",
+                "start": 0.79999995,
+                "end": 1.04,
+                "confidence": 0.9433328,
+                "punctuated_word": "person,"
+              },
+              {
+                "word": "dog",
+                "start": 1.04,
+                "end": 1.28,
+                "confidence": 0.99966073,
+                "punctuated_word": "dog"
+              },
+              {
+                "word": "person",
+                "start": 1.28,
+                "end": 1.5999999,
+                "confidence": 0.99616253,
+                "punctuated_word": "person?"
+              },
+              {
+                "word": "i",
+                "start": 1.5999999,
+                "end": 1.68,
+                "confidence": 0.98288983,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "don't",
+                "start": 1.68,
+                "end": 1.76,
+                "confidence": 0.9683819,
+                "punctuated_word": "don't"
+              },
+              {
+                "word": "fucking",
+                "start": 1.76,
+                "end": 2.0,
+                "confidence": 0.99250317,
+                "punctuated_word": "fucking"
+              },
+              {
+                "word": "know",
+                "start": 2.0,
+                "end": 2.24,
+                "confidence": 0.9687646,
+                "punctuated_word": "know."
+              },
+              {
+                "word": "i",
+                "start": 2.24,
+                "end": 2.32,
+                "confidence": 0.9994993,
+                "punctuated_word": "I"
+              },
+              {
+                "word": "don't",
+                "start": 2.32,
+                "end": 2.48,
+                "confidence": 0.99977124,
+                "punctuated_word": "don't"
+              },
+              {
+                "word": "wanna",
+                "start": 2.48,
+                "end": 2.6399999,
+                "confidence": 0.7846925,
+                "punctuated_word": "wanna"
+              },
+              {
+                "word": "get",
+                "start": 2.6399999,
+                "end": 2.8,
+                "confidence": 0.99122506,
+                "punctuated_word": "get"
+              },
+              {
+                "word": "to",
+                "start": 2.8,
+                "end": 2.8799999,
+                "confidence": 0.9993899,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "know",
+                "start": 2.8799999,
+                "end": 3.04,
+                "confidence": 0.9997156,
+                "punctuated_word": "know"
+              },
+              {
+                "word": "you",
+                "start": 3.04,
+                "end": 3.12,
+                "confidence": 0.6731838,
+                "punctuated_word": "you,"
+              },
+              {
+                "word": "but",
+                "start": 3.12,
+                "end": 3.36,
+                "confidence": 0.99914265,
+                "punctuated_word": "but"
+              },
+              {
+                "word": "there",
+                "start": 3.36,
+                "end": 3.52,
+                "confidence": 0.99923444,
+                "punctuated_word": "there"
+              },
+              {
+                "word": "is",
+                "start": 3.52,
+                "end": 3.6799998,
+                "confidence": 0.99874157,
+                "punctuated_word": "is"
+              },
+              {
+                "word": "one",
+                "start": 3.6799998,
+                "end": 3.9199998,
+                "confidence": 0.98952603,
+                "punctuated_word": "one"
+              },
+              {
+                "word": "thing",
+                "start": 3.9199998,
+                "end": 4.16,
+                "confidence": 0.99981195,
+                "punctuated_word": "thing"
+              },
+              {
+                "word": "everyone",
+                "start": 4.16,
+                "end": 4.56,
+                "confidence": 0.99471176,
+                "punctuated_word": "everyone"
+              },
+              {
+                "word": "understands",
+                "start": 4.56,
+                "end": 5.06,
+                "confidence": 0.99348444,
+                "punctuated_word": "understands"
+              },
+              {
+                "word": "and",
+                "start": 5.2,
+                "end": 5.3599997,
+                "confidence": 0.93811923,
+                "punctuated_word": "and"
+              },
+              {
+                "word": "that's",
+                "start": 5.3599997,
+                "end": 5.7599998,
+                "confidence": 0.99976194,
+                "punctuated_word": "that's"
+              },
+              {
+                "word": "pain",
+                "start": 5.7599998,
+                "end": 6.16,
+                "confidence": 0.9993417,
+                "punctuated_word": "pain."
+              },
+              {
+                "word": "you're",
+                "start": 6.16,
+                "end": 6.3999996,
+                "confidence": 0.98187655,
+                "punctuated_word": "You're"
+              },
+              {
+                "word": "supposed",
+                "start": 6.3999996,
+                "end": 6.64,
+                "confidence": 0.99279,
+                "punctuated_word": "supposed"
+              },
+              {
+                "word": "to",
+                "start": 6.64,
+                "end": 6.7999997,
+                "confidence": 0.9956691,
+                "punctuated_word": "to"
+              },
+              {
+                "word": "ask",
+                "start": 6.7999997,
+                "end": 6.96,
+                "confidence": 0.9990534,
+                "punctuated_word": "ask"
+              },
+              {
+                "word": "why",
+                "start": 6.96,
+                "end": 7.2,
+                "confidence": 0.99317616,
+                "punctuated_word": "why"
+              },
+              {
+                "word": "we",
+                "start": 7.2,
+                "end": 7.2799997,
+                "confidence": 0.98320955,
+                "punctuated_word": "we"
+              },
+              {
+                "word": "need",
+                "start": 7.2799997,
+                "end": 7.44,
+                "confidence": 0.99911505,
+                "punctuated_word": "need"
+              },
+              {
+                "word": "this",
+                "start": 7.44,
+                "end": 7.7599998,
+                "confidence": 0.69659936,
+                "punctuated_word": "this."
+              },
+              {
+                "word": "why",
+                "start": 7.7599998,
+                "end": 7.9199996,
+                "confidence": 0.5869732,
+                "punctuated_word": "Why"
+              },
+              {
+                "word": "do",
+                "start": 7.9199996,
+                "end": 8.08,
+                "confidence": 0.78161514,
+                "punctuated_word": "do"
+              },
+              {
+                "word": "we",
+                "start": 8.08,
+                "end": 8.16,
+                "confidence": 0.60182357,
+                "punctuated_word": "we"
+              },
+              {
+                "word": "need",
+                "start": 8.16,
+                "end": 8.32,
+                "confidence": 0.89595,
+                "punctuated_word": "need"
+              },
+              {
+                "word": "a",
+                "start": 8.32,
+                "end": 8.4,
+                "confidence": 0.8694781,
+                "punctuated_word": "a"
+              },
+              {
+                "word": "mic",
+                "start": 8.4,
+                "end": 8.72,
+                "confidence": 0.39603996,
+                "punctuated_word": "mic?"
+              },
+              {
+                "word": "you",
+                "start": 8.72,
+                "end": 8.88,
+                "confidence": 0.9646449,
+                "punctuated_word": "You"
+              },
+              {
+                "word": "already",
+                "start": 8.88,
+                "end": 9.12,
+                "confidence": 0.9365868,
+                "punctuated_word": "already"
+              },
+              {
+                "word": "fucking",
+                "start": 9.12,
+                "end": 9.36,
+                "confidence": 0.98532397,
+                "punctuated_word": "fucking"
+              },
+              {
+                "word": "ruined",
+                "start": 9.36,
+                "end": 9.599999,
+                "confidence": 0.9908811,
+                "punctuated_word": "ruined"
+              },
+              {
+                "word": "it",
+                "start": 9.599999,
+                "end": 10.099999,
+                "confidence": 0.759616,
+                "punctuated_word": "it."
+              }
+            ],
+            "paragraphs": {
+              "transcript": "\nDo you like? Are you cat person, dog person? I don't fucking know. I don't wanna get to know you, but there is one thing everyone understands and that's pain. You're supposed to ask why we need this.\n\nWhy do we need a mic? You already fucking ruined it.",
+              "paragraphs": [
+                {
+                  "sentences": [
+                    {
+                      "text": "Do you like?",
+                      "start": 0.0,
+                      "end": 0.39999998
+                    },
+                    {
+                      "text": "Are you cat person, dog person?",
+                      "start": 0.39999998,
+                      "end": 1.5999999
+                    },
+                    {
+                      "text": "I don't fucking know.",
+                      "start": 1.5999999,
+                      "end": 2.24
+                    },
+                    {
+                      "text": "I don't wanna get to know you, but there is one thing everyone understands and that's pain.",
+                      "start": 2.24,
+                      "end": 6.16
+                    },
+                    {
+                      "text": "You're supposed to ask why we need this.",
+                      "start": 6.16,
+                      "end": 7.7599998
+                    }
+                  ],
+                  "start": 0.0,
+                  "end": 7.7599998,
+                  "num_words": 38
+                },
+                {
+                  "sentences": [
+                    {
+                      "text": "Why do we need a mic?",
+                      "start": 7.7599998,
+                      "end": 8.72
+                    },
+                    {
+                      "text": "You already fucking ruined it.",
+                      "start": 8.72,
+                      "end": 10.099999
+                    }
+                  ],
+                  "start": 7.7599998,
+                  "end": 10.099999,
+                  "num_words": 11
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
